@@ -1,0 +1,39 @@
+<p><!DOCTYPE html> <html lang=&quot;ar&quot; dir=&quot;rtl&quot;></p>
+
+<p><head>  <meta charset=&quot;UTF-8&quot;>  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>  <title>YZ STORE | Ultimate Experience</title>  <script src=&quot;https://cdn.tailwindcss.com&quot;></script>  <link href=&quot;https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;>  <style>  body {  background-color: #020202;  font-family: 'Cairo', sans-serif;  color: #ffffff;  overflow-x: hidden;  scroll-behavior: smooth;  }</p>
+
+<p> /* &#1581;&#1585;&#1603;&#1577; &#1575;&#1604;&#1581;&#1585;&#1608;&#1601; &#1601;&#1610; &#1575;&#1604;&#1582;&#1604;&#1601;&#1610;&#1577; */  .bg-yz {  position: fixed;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);  font-size: 60vw;  font-weight: 900;  color: rgba(139, 0, 0, 0.03);  z-index: -1;  pointer-events: none;  user-select: none;  animation: floatYZ 25s ease-in-out infinite;  }</p>
+
+<p> @keyframes floatYZ {  0%, 100% { transform: translate(-50%, -55%) rotate(0deg) scale(1); }  50% { transform: translate(-45%, -45%) rotate(5deg) scale(1.1); }  }</p>
+
+<p> /* &#1578;&#1606;&#1587;&#1610;&#1602;&#1575;&#1578; &#1575;&#1604;&#1586;&#1580;&#1575;&#1580; &#1608;&#1575;&#1604;&#1608;&#1607;&#1580; */  .glass-3d {  background: rgba(15, 15, 15, 0.9);  backdrop-filter: blur(15px);  border: 1px solid rgba(139, 0, 0, 0.2);  border-radius: 20px;  }</p>
+
+<p> .red-glow {  text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);  color: #ff0000;  }</p>
+
+<p> /* &#1603;&#1585;&#1578; &#1575;&#1604;&#1605;&#1606;&#1578;&#1580; 3D */  .card-container {  perspective: 1000px;  }</p>
+
+<p> .product-card-3d {  transition: transform 0.1s ease-out;  transform-style: preserve-3d;  position: relative;  }</p>
+
+<p> .product-card-3d:hover {  border-color: #ff0000;  box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);  }  </style> </head></p>
+
+<p><body></p>
+
+<p> <div class=&quot;bg-yz&quot;>YZ</div></p>
+
+<p> <nav class=&quot;fixed top-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-red-900/20 px-6 md:px-12 py-5 flex justify-between items-center&quot;>  <div class=&quot;text-3xl font-black italic red-glow tracking-tighter uppercase&quot;>YZ STORE</div>  <div class=&quot;flex gap-4 md:gap-8 items-center&quot;>  <a href=&quot;#twitch&quot; class=&quot;text-xs font-bold hover:text-red-500 transition&quot;>&#1578;&#1608;&#1610;&#1578;&#1588;</a>  <a href=&quot;#alerts&quot; class=&quot;text-xs font-bold hover:text-red-500 transition&quot;>&#1578;&#1606;&#1576;&#1610;&#1607;&#1575;&#1578;</a>  <div class=&quot;h-6 w-px bg-white/10 mx-2&quot;></div>  <button class=&quot;bg-red-700 hover:bg-red-600 px-6 py-2 rounded-full text-[10px] font-black transition shadow-lg shadow-red-900/40 uppercase&quot;>&#1575;&#1606;&#1590;&#1605; &#1575;&#1604;&#1570;&#1606;</button>  </div>  </nav></p>
+
+<p> <main class=&quot;pt-40 pb-20 px-6 max-w-7xl mx-auto&quot;>  <div id=&quot;dynamic-products&quot; class=&quot;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10&quot;>  <p class=&quot;text-gray-500 italic col-span-full text-center&quot;>&#1580;&#1575;&#1585;&#1610; &#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604; &#1576;&#1602;&#1575;&#1593;&#1583;&#1577; &#1576;&#1610;&#1575;&#1606;&#1575;&#1578; YZ...</p>  </div>  </main></p>
+
+<p> <script type=&quot;module&quot;>  import { initializeApp } from &quot;https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js&quot;;  import { getDatabase, ref, onValue } from &quot;https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js&quot;;</p>
+
+<p> // &#1576;&#1610;&#1575;&#1606;&#1575;&#1578; Firebase &#1575;&#1604;&#1582;&#1575;&#1589;&#1577; &#1576;&#1603; (osman-70f42)  const firebaseConfig = {  apiKey: &quot;AIzaSyCt5H1t5dqUxileT88DqkIT5WRSGx45Lps&quot;,  authDomain: &quot;osman-70f42.firebaseapp.com&quot;,  databaseURL: &quot;https://osman-70f42-default-rtdb.firebaseio.com&quot;,  projectId: &quot;osman-70f42&quot;,  storageBucket: &quot;osman-70f42.firebasestorage.app&quot;,  messagingSenderId: &quot;1055576435452&quot;,  appId: &quot;1:1055576435452:web:1edd1f30c5374a98384579&quot;  };</p>
+
+<p> const app = initializeApp(firebaseConfig);  const db = getDatabase(app);</p>
+
+<p> // &#1587;&#1581;&#1576; &#1575;&#1604;&#1605;&#1606;&#1578;&#1580;&#1575;&#1578; &#1608;&#1593;&#1585;&#1590;&#1607;&#1575;  const productsRef = ref(db, 'products');  onValue(productsRef, (snapshot) => {  const display = document.getElementById('dynamic-products');  display.innerHTML = '';    if (!snapshot.exists()) {  display.innerHTML = '<p class=&quot;text-gray-500 col-span-full text-center font-bold&quot;>&#1575;&#1604;&#1605;&#1578;&#1580;&#1585; &#1601;&#1575;&#1585;&#1594; &#1581;&#1575;&#1604;&#1610;&#1575;&#1611;. &#1571;&#1590;&#1601; &#1605;&#1606;&#1578;&#1580;&#1575;&#1578; &#1605;&#1606; &#1604;&#1608;&#1581;&#1577; &#1575;&#1604;&#1578;&#1581;&#1603;&#1605; &#1604;&#1578;&#1592;&#1607;&#1585; &#1607;&#1606;&#1575;.</p>';  return;  }</p>
+
+<p> snapshot.forEach((childSnapshot) => {  const p = childSnapshot.val();  display.innerHTML += &#96;  <div class=&quot;card-container&quot; onmousemove=&quot;tiltCard(event, this)&quot; onmouseleave=&quot;resetCard(this)&quot;>  <div class=&quot;product-card-3d glass-3d p-6 h-full border border-white/5&quot;>  <div class=&quot;h-44 bg-red-950/20 rounded-xl mb-6 overflow-hidden border border-red-900/10&quot;>  <img src=&quot;${p.image || 'https://via.placeholder.com/500'}&quot; class=&quot;w-full h-full object-cover opacity-80&quot;>  </div>  <h3 class=&quot;text-xl font-bold italic mb-2 text-white&quot;>${p.name}</h3>  <p class=&quot;text-[12px] text-gray-400 mb-6 leading-relaxed&quot;>${p.description || '&#1604;&#1575; &#1610;&#1608;&#1580;&#1583; &#1608;&#1589;&#1601; &#1605;&#1578;&#1575;&#1581; &#1604;&#1607;&#1584;&#1575; &#1575;&#1604;&#1605;&#1606;&#1578;&#1580;.'}</p>  <div class=&quot;flex justify-between items-center mt-auto border-t border-white/5 pt-4&quot;>  <span class=&quot;text-2xl font-black text-red-600&quot;>$${p.price}</span>  <button class=&quot;bg-white text-black px-6 py-2 rounded-lg font-black text-[11px] uppercase transition-all hover:bg-red-600 hover:text-white&quot;>&#1588;&#1585;&#1575;&#1569;</button>  </div>  </div>  </div>&#96;;  });  });  </script></p>
+
+<p> <script>  // &#1608;&#1592;&#1610;&#1601;&#1577; &#1578;&#1581;&#1585;&#1610;&#1603; &#1575;&#1604;&#1603;&#1585;&#1608;&#1578; 3D &#1576;&#1606;&#1575;&#1569;&#1611; &#1593;&#1604;&#1609; &#1581;&#1585;&#1603;&#1577; &#1575;&#1604;&#1605;&#1575;&#1608;&#1587;  function tiltCard(e, cardContainer) {  const card = cardContainer.querySelector('.product-card-3d');  const rect = cardContainer.getBoundingClientRect();  const x = e.clientX - rect.left;  const y = e.clientY - rect.top;  const rotateX = (y - rect.height/2) / 10;  const rotateY = (rect.width/2 - x) / 10;  card.style.transform = &#96;rotateX(${rotateX}deg) rotateY(${rotateY}deg)&#96;;  }</p>
+
+<p> function resetCard(cardContainer) {  const card = cardContainer.querySelector('.product-card-3d');  card.style.transform = &#96;rotateX(0deg) rotateY(0deg)&#96;;  }  </script> </body> </html></p>
